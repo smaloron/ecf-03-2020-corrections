@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Nouveau concert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="stacked">Salle</ion-label>
+      <ion-select [(ngModel)]="concert.location_id">
+        <ion-select-option [value]="item.id" *ngFor="let item of locationList">
+          {{ item.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Groupe</ion-label>
+      <ion-select [(ngModel)]="concert.band_id">
+        <ion-select-option [value]="item.id" *ngFor="let item of bandList">
+          {{ item.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Date</ion-label>
+      <ion-datetime [(ngModel)]="concert.performance_date"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Note</ion-label>
+      <ion-select [(ngModel)]="concert.rating">
+        <ion-select-option [value]="item" *ngFor="let item of ratingsList">
+          {{ item }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="validateForm()">Valider</ion-button>
+  </ion-toolbar>
+</ion-footer>

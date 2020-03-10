@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Live Music
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let concert of concertList">
+      <ion-label>
+        <h2> {{ concert.bandName }}</h2>
+        <h3> {{concert.locationName }}</h3>
+      </ion-label>
+      <p slot="end">le {{ concert.performanceDate | date :'d/M/y' }}</p>
+      <ion-chip slot="end">{{ concert.rating }}</ion-chip>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button routerLink="/form" expand="block">Nouveau concert</ion-button>
+  </ion-toolbar>
+</ion-footer>

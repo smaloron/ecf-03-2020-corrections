@@ -41,7 +41,15 @@
       </ion-select>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="stacked">Note</ion-label>
+      <star-rating symbol="musical-notes" [(selectedRating)]="concert.rating"></star-rating>
+    </ion-item>
+
+    {{ concert.rating }}
+
   </ion-list>
+
 
 </ion-content>
 

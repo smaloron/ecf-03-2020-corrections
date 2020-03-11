@@ -1,0 +1,9 @@
+<div>
+  <ion-icon
+          [name]="symbol"
+          *ngFor="let n of values"
+          [color]="n<=value?'danger':'medium'"
+          (click)="setValue(n)">
+
+  </ion-icon>
+</div>

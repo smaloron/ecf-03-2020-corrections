@@ -12,8 +12,9 @@
       <ion-label>
         <h2> {{ concert.bandName }}</h2>
         <h3> {{concert.locationName }}</h3>
+        <p>le {{ concert.performanceDate | date :'d/M/y' }}</p>
       </ion-label>
-      <p slot="end">le {{ concert.performanceDate | date :'d/M/y' }}</p>
+
       <ion-chip slot="end">{{ concert.rating }}</ion-chip>
     </ion-item>
   </ion-list>
